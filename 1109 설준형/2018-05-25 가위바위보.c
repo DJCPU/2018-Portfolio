@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+	int myinput, cominput, myscore=0, comscore=0, count=1;
+	while(count<=5){
+		printf("\n[메뉴] 1. 가위 2. 바위 3. 보    => 선택 :");
+		scanf("%d", &myinput);
+		
+		cominput=rand()%3+1;
+		
+		if(myinput==1) printf("내선택:가위");
+		else if(myinput==2) printf("내선택:바위");
+		else if(myinput==3) printf("내선택:보");
+		
+		if(cominput==1) printf(", 컴선택:가위");
+		else if(cominput==2) printf(", 컴선택:바위");
+		else if(cominput==3) printf(", 컴선택:보");
+		
+		if(myinput==cominput)
+			printf("\t비겼습니다\n"); 
+		else if( (myinput==1 && cominput==3)  
+		|| (myinput==2 && cominput==1) 
+		|| (myinput==3 && cominput==2)  )
+			myscore++, printf("\t내가 이겼다\n"); 
+		else
+			comscore++, printf("\t컴이 이겼다\n");
+		
+		printf("****************************************\n");
+		
+		count++;	
+	}
+	
+	return 0;
+ } 
